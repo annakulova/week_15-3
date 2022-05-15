@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="selectors">
+      <select id="selector">
+          <option>Выберите фон</option>
+          <option value="blue">Синий</option>
+          <option value="yellow">Желтый</option>
+          <option value="green">Зеленый</option>
+          <option value="red">Красный</option>
+      </select>   
+      <button onclick="selectBackground()">Выбрать этот фон</button>
+  </div>
+
+  <div class="results" id="PreviewResults" style="background-color:white;">
+    Ваш выбранный фон
+  </div>
+
+  <script>
+    function selectBackground(){
+        var select = document.getElementById('selector');
+        var color = (select.selectedIndex != 0) ? select.options[select.selectedIndex].value : 'transparent';
+        document.getElementById('PreviewResults').style.backgroundColor = color;
+    }
+  </script>
+</body>
+</html>
